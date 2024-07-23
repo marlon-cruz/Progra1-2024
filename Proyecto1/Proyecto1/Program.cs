@@ -89,7 +89,6 @@ namespace Proyecto1
             }
             Console.ReadLine();
 
-            Console.WriteLine("Prueba");
         }
     }
 }
