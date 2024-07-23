@@ -86,8 +86,10 @@ namespace Proyecto1
             else
             {
                 Console.WriteLine("Has aprobado la materia, --Felicidades--");
+                Console.ReadLine();
             }
             Console.ReadLine();
+        
 
         }
     }
