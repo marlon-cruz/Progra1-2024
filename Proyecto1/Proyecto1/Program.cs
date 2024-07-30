@@ -10,24 +10,25 @@ namespace Proyecto1
     {
         static void Main(string[] args)
         {
-            int suma = 0; //prioridad de operadores aritmeticos
-            //ejercicion promedio de una serie de numeros
+            //Estructuras de control
 
-            int[] serie = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5 };//matriz unidireccional
+            //1 if ejercicio.pedir al usuario y si es mayor que nos diga bienvenido
 
-            foreach (int num in serie)
+            Console.Write("Edad: ");
+            int edad = int.Parse(Console.ReadLine());
+
+            if(edad >= 18)
             {
-                suma += num;
-
+                Console.WriteLine("Bienvenido al mundo de las responsabilidades");
             }
-            float promedio = serie.Length;
+            else
+            {
+                Console.WriteLine("Eres un adolecente disfruta de la vida");
+            }
 
-            Console.WriteLine("La suma es: {0}, el promedio es: {1}", suma, suma / promedio);
 
-            //pausa para ver que hay en el programa
+
             Console.ReadLine();
-        
-
         }
     }
 }
