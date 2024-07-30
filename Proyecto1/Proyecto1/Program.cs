@@ -22,7 +22,8 @@ namespace Proyecto1
                 Console.WriteLine("1. Promedio Notas");
                 Console.WriteLine("2. Promedio Serie Numeros");
                 Console.WriteLine("3. Clasificacion edad");
-                Console.WriteLine("4. Salir");
+                Console.WriteLine("4. Tabla de multiplicar");
+                Console.WriteLine("5. Salir");
                 Console.Write("Opcion: ");
                 int opcion = int.Parse(Console.ReadLine());
                 switch (opcion)
@@ -36,8 +37,10 @@ namespace Proyecto1
                     case 3:
                         clasificacionEdad();
                         break;
-                    
-                    case 4:
+                    case 4://if(opcion==4)
+                        tablaMultiplicar();
+                        break;
+                    case 5:
                         continuar = "n";
                         break;
                     default:
@@ -52,7 +55,17 @@ namespace Proyecto1
 
             
         }
-        
+        static void tablaMultiplicar()
+        {
+            Console.Write("Tabla: ");
+
+            int tabla = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("{0} x {1} = {2}", i, tabla, i * tabla);
+            }
+        }
 
         static void promedio()
         {
