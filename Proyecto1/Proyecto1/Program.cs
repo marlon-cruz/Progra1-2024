@@ -13,37 +13,45 @@ namespace Proyecto1
             //Estructuras de control
 
             //1 if ejercicio.pedir al usuario y si es mayor que nos diga bienvenido
+            string continuar = "s";
 
-            Console.Write("Edad: ");
-            int edad = int.Parse(Console.ReadLine());
-            if(edad < 0)
+            while (continuar == "s")
             {
-                Console.Write("Edad incorrecta");
-            }else if (edad <= 2)
-            {
-                Console.Write("Eres un bebe");
-            }else if (edad < 12)
-            {
-                Console.Write("Eres un niño");
-            }else if (edad < 18)
-            {
-                Console.Write("Eres un adolecente");
-            }else if (edad <= 65)
-            {
-                Console.Write("Bienvenido al mundo de las responsabilidades");
+                Console.Write("Edad: ");
+                int edad = int.Parse(Console.ReadLine());
+                if (edad < 0)
+                {
+                    Console.WriteLine("Edad incorrecta");
+                }
+                else if (edad <= 2)
+                {
+                    Console.WriteLine("Eres un bebe");
+                }
+                else if (edad < 12)
+                {
+                    Console.WriteLine("Eres un niño");
+                }
+                else if (edad < 18)
+                {
+                    Console.WriteLine("Eres un adolecente");
+                }
+                else if (edad <= 65)
+                {
+                    Console.WriteLine("Bienvenido al mundo de las responsabilidades");
+                }
+                else if (edad <= 80)
+                {
+                    Console.WriteLine("Eres un adulto mayor");
+                }
+                else
+                {
+                    Console.WriteLine("Larga vida");
+                }
+                Console.WriteLine("\nDesea continuar presione s \nsino cualquier tecla");
+                continuar = Console.ReadLine();
             }
-            else if(edad <= 80)
-            {
-                Console.WriteLine("Eres un adulto mayor");
-            }
-            else
-            {
-                Console.WriteLine("Larga vida");
-            }
 
-
-
-            Console.ReadLine();
+            
         }
     }
 }
