@@ -16,14 +16,29 @@ namespace Proyecto1
 
             Console.Write("Edad: ");
             int edad = int.Parse(Console.ReadLine());
-
-            if(edad >= 18)
+            if(edad < 0)
             {
-                Console.WriteLine("Bienvenido al mundo de las responsabilidades");
+                Console.Write("Edad incorrecta");
+            }else if (edad <= 2)
+            {
+                Console.Write("Eres un bebe");
+            }else if (edad < 12)
+            {
+                Console.Write("Eres un niño");
+            }else if (edad < 18)
+            {
+                Console.Write("Eres un adolecente");
+            }else if (edad <= 65)
+            {
+                Console.Write("Bienvenido al mundo de las responsabilidades");
+            }
+            else if(edad <= 80)
+            {
+                Console.WriteLine("Eres un adulto mayor");
             }
             else
             {
-                Console.WriteLine("Eres un adolecente disfruta de la vida");
+                Console.WriteLine("Larga vida");
             }
 
 
