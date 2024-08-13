@@ -21,10 +21,10 @@ namespace Proyecto1
             Console.Write("Sueldo: ");
             double sueldo = double.Parse(Console.ReadLine()),
                 afp = sueldo * 6.25 / 100,
-                isss = sueldo * 3 / 100;
+                isss = sueldo * 3 / 100,
+                isr = 0;
             sueldo -= afp;
 
-            double isr = 0;
             for (int i = 0; i < 5; i++)
             {
                 if (sueldo >= matriz[i, 0] && sueldo <= matriz[i, 1])
