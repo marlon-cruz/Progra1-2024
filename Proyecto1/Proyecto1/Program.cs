@@ -12,20 +12,20 @@ namespace Proyecto1
         {
             //Uso de matrices
             double[,] matriz = new double[,] {
-                {0.01, 487.60, 0, 0},
-                {487.61, 642.85, 10, 17.48},
-                {642.86, 915.81, 10, 32.70},
-                {915.82, 2058.67, 20, 60.00 },
-                {2058.68, 9999999, 30, 288.57},
+                {0.01, 472.60, 0, 0},
+                {472.01, 895.24, 10, 17.67},
+                {895.25, 2038.24, 20, 60.00},
+                {2038.25, 9999999, 30, 288.57 },
+               
             };
             Console.Write("Sueldo: ");
             double sueldo = double.Parse(Console.ReadLine()),
-                afp = sueldo * 6.25 / 100,
+                afp = sueldo * 7.25 / 100,
                 isss = sueldo * 3 / 100,
                 isr = 0;
             sueldo -= afp;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (sueldo >= matriz[i, 0] && sueldo <= matriz[i, 1])
                 {
