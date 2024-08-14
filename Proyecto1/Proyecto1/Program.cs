@@ -10,21 +10,28 @@ namespace Proyecto1
     {
         static void Main(string[] args)
         {
+            //determinar si un numero es primo
 
-            int[] serie = new int[] { 5, 9, 4, 6, 3, 2 };
+            int[] serie = new int[] { 5, 9, 4, 6, 3, 2,7,11,15,17,21 };
             foreach (int num in serie)
             {
-                Console.WriteLine("El num {0} es {1}", num, num % 2 == 0 ? "par" : "Impar");
+                int i = 1;
+                int n = 0;
+                while(i <= num && n <= 2)
+                {
+                    if (num % i == 0)
+                    {
+                        n++;
+                       
+                    }
+                    i++;
+                }
+                Console.WriteLine("El numero {0} es {1}", num, n <= 2 ? "Es primo" : "No es primo");
             }
 
-
-
-
             Console.Read();
-   
-        
-        
-        }
+
+           }
 
     }
 }
