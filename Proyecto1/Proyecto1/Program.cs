@@ -11,34 +11,20 @@ namespace Proyecto1
         static void Main(string[] args)
         {
 
-            //SECUENCIA FIBONACCI
-            /*
-             0+1 = 1
-             1+0 = 1
-             1+1 = 2
-             2+1 = 3
-             3+2 = 5
-             5+3 = 8
-             8+5 = 13
-             */
-            int a = 0, b = 1, c = 1;
-            while (c < 100)
+            int[] serie = new int[] { 5, 9, 4, 6, 3, 2 };
+            foreach (int num in serie)
             {
-                Console.WriteLine("{0} + {1} = {2}", a, b, c);
-                
-                b = a;
-                a = c;
-                c = a + b;
-                
-               
+                Console.WriteLine("El num {0} es {1}", num, num % 2 == 0 ? "par" : "Impar");
             }
+
+
+
+
+            Console.Read();
+   
         
-
-
-
-
-            Console.ReadLine();
+        
         }
-    
+
     }
 }
