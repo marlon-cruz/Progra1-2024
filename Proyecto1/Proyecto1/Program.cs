@@ -10,29 +10,39 @@ namespace Proyecto1
     {
         static void Main(string[] args)
         {
-            //Uso de funciones
+            //Uso de funcionesy matrices
+            //ejercicio encontrar la media aritmetica en la desviacion tipica de una serie de numeros
 
-            Console.WriteLine("El resultado de la suma es: {0}", sumar());
+            int[] serie = new int[] {1,2,3,4,5};
 
-            Console.Write("Num 1: ");
-            int num1 = int.Parse(Console.ReadLine());
-            Console.Write("Num 2: ");
-            int num2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("La suma de {0} + {1} = {2}", num1, num2, sumar(num1, num2));
-
+            Console.WriteLine("La media aritmetca es: {0} y la desviacion tipica es: {1}",media(serie),tipica(serie));
             Console.Read();
         }
-       static int sumar()
+      
+        static double media(int[] serie)
         {
-            int respuesta = 10 + 5;
-            return respuesta;
-        }
-        static int sumar(int a, int b)
-        {
-            int respuesta = a +b;
-            return respuesta;
-        }
+            double media = 0;
+            foreach (int num in serie)
+            {
+                media += num;
 
+            }
+
+            return media / serie.Length;
+
+        }
+        static double tipica(int[] serie)
+        {
+            double tipica = 0;
+            double m = media(serie);
+            foreach(int num in serie)
+            {
+                tipica += Math.Pow(num - m, 2);
+            }
+            tipica = Math.Sqrt(tipica / serie.Length);
+            return tipica;
+
+        }
     }
 }
