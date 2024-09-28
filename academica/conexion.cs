@@ -23,10 +23,13 @@ namespace academica {
             ds.Clear();
             misComandos.Connection = miConexion;
 
-            misComandos.CommandText = "SELECT * FROM alumnos";
             miAdaptador.SelectCommand = misComandos;
+            misComandos.CommandText = "SELECT * FROM alumnos";
             miAdaptador.Fill(ds, "alumnos");
 
+
+            misComandos.CommandText = "SELECT * FROM materias";
+            miAdaptador.Fill(ds, "materias");
             return ds;
         }
         public String administrarAlumnos(String[] datos) {
@@ -39,6 +42,20 @@ namespace academica {
                     datos[5] + "', dui='" + datos[6] + "' WHERE idAlumno=" + datos[1];
             } else if (datos[0] == "eliminar") {
                 sql = "DELETE FROM alumnos WHERE idAlumno=" + datos[1];
+            }
+            return ejecutarSQL(sql);
+        }
+        public String administrarMaterias(String[] datos)
+        {
+            String sql = "";
+            if (datos[0] == "nuevo"){
+                sql = "INSERT INTO materias(codigo, nombre, uv) VALUES('" +
+                    datos[2] + "','" + datos[3] + "','" + datos[4] + "')";
+            }else if (datos[0] == "modificar"){
+                sql = "UPDATE materias SET codigo='" + datos[2] + "', nombre='" + datos[3] + "', uv='" + datos[4] +
+                    "' WHERE idMateria=" + datos[1];
+            }else if (datos[0] == "eliminar"){
+                sql = "DELETE FROM materias WHERE idMateria=" + datos[1];
             }
             return ejecutarSQL(sql);
         }

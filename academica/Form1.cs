@@ -73,7 +73,6 @@ namespace academica {
             grbDatosAlumno.Enabled = estado;
             grbNavegacionAlumno.Enabled = !estado;
             btnEliminarAlumno.Enabled = !estado;
-            //btnBuscarAlumno.Enabled= !estado;
         }
 
         private void btnNuevoAlumno_Click(object sender, EventArgs e) {
@@ -148,7 +147,8 @@ namespace academica {
                 seleccionarAllumno();
             //}
         }
-        private void seleccionarAllumno() {
+        private void seleccionarAllumno()
+        {
             posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosAlumnos.CurrentRow.Cells["idAlumno"].Value.ToString()));
             mostrarDatosAlumno();
         }
