@@ -156,13 +156,8 @@ namespace academica
         }
         private void seleccionarMateria()
         {
-           
-            
-                posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
-                mostrarDatosMaterias();
-      
-            
-           
+        posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
+        mostrarDatosMaterias();
         }
 
         private void txtBuscarMaterias_KeyUp(object sender, KeyEventArgs e)

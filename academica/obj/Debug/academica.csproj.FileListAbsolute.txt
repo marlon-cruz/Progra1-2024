@@ -64,3 +64,4 @@ C:\Users\marlo\source\repos\Progra1-2024\academica\obj\Debug\academica.csproj.Ge
 C:\Users\marlo\source\repos\Progra1-2024\academica\obj\Debug\academica.csproj.CoreCompileInputs.cache
 C:\Users\marlo\source\repos\Progra1-2024\academica\obj\Debug\academica.exe
 C:\Users\marlo\source\repos\Progra1-2024\academica\obj\Debug\academica.pdb
+C:\Users\marlo\source\repos\Progra1-2024\academica\obj\Debug\academica.docentes.resources
