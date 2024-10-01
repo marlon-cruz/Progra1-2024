@@ -32,6 +32,12 @@ namespace academica
             this.lblBuscarDocente = new System.Windows.Forms.Label();
             this.txtBuscarDocente = new System.Windows.Forms.TextBox();
             this.grdDatosDocentes = new System.Windows.Forms.DataGridView();
+            this.IdDocente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materia1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Materia2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.especialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbEdicionDocente = new System.Windows.Forms.GroupBox();
             this.btnEliminarDocente = new System.Windows.Forms.Button();
             this.btnModificarDocente = new System.Windows.Forms.Button();
@@ -43,6 +49,8 @@ namespace academica
             this.btnAnteriorDocente = new System.Windows.Forms.Button();
             this.btnPrimeroDocente = new System.Windows.Forms.Button();
             this.grbDatosDocentes = new System.Windows.Forms.GroupBox();
+            this.cmbEspecialidadDocente = new System.Windows.Forms.ComboBox();
+            this.lblEspecialidadDocente = new System.Windows.Forms.Label();
             this.lblNivelAcademinco = new System.Windows.Forms.Label();
             this.txtNAcademico = new System.Windows.Forms.TextBox();
             this.lblMateria2 = new System.Windows.Forms.Label();
@@ -53,11 +61,6 @@ namespace academica
             this.txtNombreDocente = new System.Windows.Forms.TextBox();
             this.lblCodigoAlumno = new System.Windows.Forms.Label();
             this.txtCodigoDocente = new System.Windows.Forms.TextBox();
-            this.IdDocente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materia1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Materia2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdDatosDocentes)).BeginInit();
             this.grbEdicionDocente.SuspendLayout();
             this.grbNavegacionDocente.SuspendLayout();
@@ -94,7 +97,8 @@ namespace academica
             this.codigo,
             this.nombre,
             this.materia1,
-            this.Materia2});
+            this.Materia2,
+            this.especialidad});
             this.grdDatosDocentes.Location = new System.Drawing.Point(564, 52);
             this.grdDatosDocentes.Margin = new System.Windows.Forms.Padding(4);
             this.grdDatosDocentes.Name = "grdDatosDocentes";
@@ -103,6 +107,61 @@ namespace academica
             this.grdDatosDocentes.Size = new System.Drawing.Size(579, 310);
             this.grdDatosDocentes.TabIndex = 14;
             this.grdDatosDocentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDatosDocentes_CellClick);
+            // 
+            // IdDocente
+            // 
+            this.IdDocente.DataPropertyName = "IdDocente";
+            this.IdDocente.HeaderText = "ID";
+            this.IdDocente.MinimumWidth = 6;
+            this.IdDocente.Name = "IdDocente";
+            this.IdDocente.ReadOnly = true;
+            this.IdDocente.Visible = false;
+            this.IdDocente.Width = 125;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "CODIGO";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 125;
+            // 
+            // materia1
+            // 
+            this.materia1.DataPropertyName = "materia1";
+            this.materia1.HeaderText = "MATERIA1";
+            this.materia1.MinimumWidth = 6;
+            this.materia1.Name = "materia1";
+            this.materia1.ReadOnly = true;
+            this.materia1.Width = 125;
+            // 
+            // Materia2
+            // 
+            this.Materia2.DataPropertyName = "materia2";
+            this.Materia2.HeaderText = "MATERIA2";
+            this.Materia2.MinimumWidth = 6;
+            this.Materia2.Name = "Materia2";
+            this.Materia2.ReadOnly = true;
+            this.Materia2.Width = 125;
+            // 
+            // especialidad
+            // 
+            this.especialidad.DataPropertyName = "especialidad";
+            this.especialidad.HeaderText = "ESPECIALIDAD";
+            this.especialidad.MinimumWidth = 6;
+            this.especialidad.Name = "especialidad";
+            this.especialidad.ReadOnly = true;
+            this.especialidad.Width = 125;
             // 
             // grbEdicionDocente
             // 
@@ -231,6 +290,8 @@ namespace academica
             // 
             // grbDatosDocentes
             // 
+            this.grbDatosDocentes.Controls.Add(this.cmbEspecialidadDocente);
+            this.grbDatosDocentes.Controls.Add(this.lblEspecialidadDocente);
             this.grbDatosDocentes.Controls.Add(this.lblNivelAcademinco);
             this.grbDatosDocentes.Controls.Add(this.txtNAcademico);
             this.grbDatosDocentes.Controls.Add(this.lblMateria2);
@@ -252,11 +313,39 @@ namespace academica
             this.grbDatosDocentes.Text = "Datos Alumnos";
             this.grbDatosDocentes.Enter += new System.EventHandler(this.grbDatosDocentes_Enter);
             // 
+            // cmbEspecialidadDocente
+            // 
+            this.cmbEspecialidadDocente.FormattingEnabled = true;
+            this.cmbEspecialidadDocente.Items.AddRange(new object[] {
+            "Informatico",
+            "Contador",
+            "Matematico",
+            "Abogado",
+            "Salud",
+            "Ingeniero",
+            "Arquitecto",
+            "bilingüe"});
+            this.cmbEspecialidadDocente.Location = new System.Drawing.Point(147, 251);
+            this.cmbEspecialidadDocente.Name = "cmbEspecialidadDocente";
+            this.cmbEspecialidadDocente.Size = new System.Drawing.Size(201, 24);
+            this.cmbEspecialidadDocente.TabIndex = 11;
+            // 
+            // lblEspecialidadDocente
+            // 
+            this.lblEspecialidadDocente.AutoSize = true;
+            this.lblEspecialidadDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspecialidadDocente.Location = new System.Drawing.Point(-5, 251);
+            this.lblEspecialidadDocente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEspecialidadDocente.Name = "lblEspecialidadDocente";
+            this.lblEspecialidadDocente.Size = new System.Drawing.Size(159, 29);
+            this.lblEspecialidadDocente.TabIndex = 10;
+            this.lblEspecialidadDocente.Text = "Especialidad:";
+            // 
             // lblNivelAcademinco
             // 
             this.lblNivelAcademinco.AutoSize = true;
             this.lblNivelAcademinco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNivelAcademinco.Location = new System.Drawing.Point(8, 246);
+            this.lblNivelAcademinco.Location = new System.Drawing.Point(-5, 198);
             this.lblNivelAcademinco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNivelAcademinco.Name = "lblNivelAcademinco";
             this.lblNivelAcademinco.Size = new System.Drawing.Size(160, 29);
@@ -265,17 +354,17 @@ namespace academica
             // 
             // txtNAcademico
             // 
-            this.txtNAcademico.Location = new System.Drawing.Point(175, 253);
+            this.txtNAcademico.Location = new System.Drawing.Point(152, 205);
             this.txtNAcademico.Margin = new System.Windows.Forms.Padding(4);
             this.txtNAcademico.Name = "txtNAcademico";
-            this.txtNAcademico.Size = new System.Drawing.Size(132, 22);
+            this.txtNAcademico.Size = new System.Drawing.Size(196, 22);
             this.txtNAcademico.TabIndex = 8;
             // 
             // lblMateria2
             // 
             this.lblMateria2.AutoSize = true;
             this.lblMateria2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMateria2.Location = new System.Drawing.Point(41, 191);
+            this.lblMateria2.Location = new System.Drawing.Point(21, 156);
             this.lblMateria2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMateria2.Name = "lblMateria2";
             this.lblMateria2.Size = new System.Drawing.Size(118, 29);
@@ -284,17 +373,17 @@ namespace academica
             // 
             // txtMateria2
             // 
-            this.txtMateria2.Location = new System.Drawing.Point(175, 196);
+            this.txtMateria2.Location = new System.Drawing.Point(146, 163);
             this.txtMateria2.Margin = new System.Windows.Forms.Padding(4);
             this.txtMateria2.Name = "txtMateria2";
-            this.txtMateria2.Size = new System.Drawing.Size(132, 22);
+            this.txtMateria2.Size = new System.Drawing.Size(339, 22);
             this.txtMateria2.TabIndex = 6;
             // 
             // lblMateria1
             // 
             this.lblMateria1.AutoSize = true;
             this.lblMateria1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMateria1.Location = new System.Drawing.Point(41, 143);
+            this.lblMateria1.Location = new System.Drawing.Point(15, 114);
             this.lblMateria1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMateria1.Name = "lblMateria1";
             this.lblMateria1.Size = new System.Drawing.Size(124, 29);
@@ -303,7 +392,7 @@ namespace academica
             // 
             // txtMateria1
             // 
-            this.txtMateria1.Location = new System.Drawing.Point(175, 148);
+            this.txtMateria1.Location = new System.Drawing.Point(147, 121);
             this.txtMateria1.Margin = new System.Windows.Forms.Padding(4);
             this.txtMateria1.Name = "txtMateria1";
             this.txtMateria1.Size = new System.Drawing.Size(333, 22);
@@ -313,7 +402,7 @@ namespace academica
             // 
             this.lblNombreAlumno.AutoSize = true;
             this.lblNombreAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAlumno.Location = new System.Drawing.Point(41, 94);
+            this.lblNombreAlumno.Location = new System.Drawing.Point(32, 73);
             this.lblNombreAlumno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreAlumno.Name = "lblNombreAlumno";
             this.lblNombreAlumno.Size = new System.Drawing.Size(107, 29);
@@ -322,7 +411,7 @@ namespace academica
             // 
             // txtNombreDocente
             // 
-            this.txtNombreDocente.Location = new System.Drawing.Point(175, 98);
+            this.txtNombreDocente.Location = new System.Drawing.Point(152, 80);
             this.txtNombreDocente.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreDocente.Name = "txtNombreDocente";
             this.txtNombreDocente.Size = new System.Drawing.Size(333, 22);
@@ -332,7 +421,7 @@ namespace academica
             // 
             this.lblCodigoAlumno.AutoSize = true;
             this.lblCodigoAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoAlumno.Location = new System.Drawing.Point(41, 46);
+            this.lblCodigoAlumno.Location = new System.Drawing.Point(41, 32);
             this.lblCodigoAlumno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigoAlumno.Name = "lblCodigoAlumno";
             this.lblCodigoAlumno.Size = new System.Drawing.Size(98, 29);
@@ -341,57 +430,11 @@ namespace academica
             // 
             // txtCodigoDocente
             // 
-            this.txtCodigoDocente.Location = new System.Drawing.Point(175, 50);
+            this.txtCodigoDocente.Location = new System.Drawing.Point(161, 39);
             this.txtCodigoDocente.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoDocente.Name = "txtCodigoDocente";
             this.txtCodigoDocente.Size = new System.Drawing.Size(132, 22);
             this.txtCodigoDocente.TabIndex = 0;
-            // 
-            // IdDocente
-            // 
-            this.IdDocente.DataPropertyName = "IdDocente";
-            this.IdDocente.HeaderText = "ID";
-            this.IdDocente.MinimumWidth = 6;
-            this.IdDocente.Name = "IdDocente";
-            this.IdDocente.ReadOnly = true;
-            this.IdDocente.Visible = false;
-            this.IdDocente.Width = 125;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "CODIGO";
-            this.codigo.MinimumWidth = 6;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "NOMBRE";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 125;
-            // 
-            // materia1
-            // 
-            this.materia1.DataPropertyName = "materia1";
-            this.materia1.HeaderText = "MATERIA1";
-            this.materia1.MinimumWidth = 6;
-            this.materia1.Name = "materia1";
-            this.materia1.ReadOnly = true;
-            this.materia1.Width = 125;
-            // 
-            // Materia2
-            // 
-            this.Materia2.DataPropertyName = "materia2";
-            this.Materia2.HeaderText = "MATERIA2";
-            this.Materia2.MinimumWidth = 6;
-            this.Materia2.Name = "Materia2";
-            this.Materia2.ReadOnly = true;
-            this.Materia2.Width = 125;
             // 
             // docentes
             // 
@@ -449,5 +492,8 @@ namespace academica
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn materia1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Materia2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especialidad;
+        private System.Windows.Forms.ComboBox cmbEspecialidadDocente;
+        private System.Windows.Forms.Label lblEspecialidadDocente;
     }
 }

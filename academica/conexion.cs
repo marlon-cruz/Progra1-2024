@@ -69,12 +69,12 @@ namespace academica {
             if (datos[0] == "nuevo")
             {
                 sql = "INSERT INTO docentes(codigo, nombre, materia1, materia2, nivel_academico) VALUES('" +
-                    datos[2] + "','" + datos[3] + "','" + datos[4] + "','" + datos[5] + "','" + datos[6] + "')";
+                    datos[2] + "','" + datos[3] + "','" + datos[4] + "','" + datos[5] + "','" + datos[6] + datos[7] + "')";
             }
             else if (datos[0] == "modificar")
             {
                 sql = "UPDATE docentes SET codigo='" + datos[2] + "', nombre='" + datos[3] + "', materia1='" + datos[4] + "', materia2='" +
-                    datos[5] + "', nivel_academico='" + datos[6] + "' WHERE IdDocente=" + datos[1];
+                    datos[5] + "', nivel_academico='" + datos[6] + "', especialidad='" + datos[7] + "' WHERE IdDocente=" + datos[1];
             }
             else if (datos[0] == "eliminar")
             {

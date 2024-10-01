@@ -45,6 +45,7 @@ namespace academica
                 txtMateria1.Text = miTabla.Rows[posicion].ItemArray[3].ToString();
                 txtMateria2.Text = miTabla.Rows[posicion].ItemArray[4].ToString();
                 txtNAcademico.Text = miTabla.Rows[posicion].ItemArray[5].ToString();
+                cmbEspecialidadDocente.Text = miTabla.Rows[posicion].ItemArray[6].ToString();
 
                 lblRegistrosDocente.Text = (posicion + 1) + " de " + miTabla.Rows.Count;
             }
@@ -108,7 +109,7 @@ namespace academica
             {//Guardar
                 String[] docentes = {
                     accion, miTabla.Rows[posicion].ItemArray[0].ToString(),
-                    txtCodigoDocente.Text, txtNombreDocente.Text, txtMateria1.Text,txtMateria2.Text,txtNAcademico.Text
+                    txtCodigoDocente.Text, txtNombreDocente.Text, txtMateria1.Text,txtMateria2.Text,txtNAcademico.Text, cmbEspecialidadDocente.Text
                 };
                 String respuesta = objConexion.administrarDocente(docentes);
                 if (respuesta != "1")
