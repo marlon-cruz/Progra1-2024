@@ -156,8 +156,24 @@ namespace academica
         }
         private void seleccionarMateria()
         {
-        posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
-        mostrarDatosMaterias();
+            try
+            {
+                var currentRow = grdDatosMaterias.CurrentRow;
+                if (currentRow != null)
+                {
+                    posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
+                    mostrarDatosMaterias();
+                }
+                else
+                {
+                    MessageBox.Show("Registro no encontrado");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrió un error");
+            }
+           
         }
 
         private void txtBuscarMaterias_KeyUp(object sender, KeyEventArgs e)
@@ -171,6 +187,11 @@ namespace academica
         private void grdDatosMaterias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             seleccionarMateria();
+        }
+
+        private void txtBuscarMaterias_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

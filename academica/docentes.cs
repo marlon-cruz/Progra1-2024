@@ -181,8 +181,23 @@ namespace academica
         }
         private void seleccionarDocente()
         {
-            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosDocentes.CurrentRow.Cells["IdDocente"].Value.ToString()));
-            mostrarDatosDocente();
+            try
+            {
+                var currentRow = grdDatosDocentes.CurrentRow;
+                if (currentRow != null)
+                {
+                    posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(currentRow.Cells["IdDocente"].Value.ToString()));
+                    mostrarDatosDocente();
+                }
+                else
+                {
+                    MessageBox.Show("Registro no encontrado");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrió un error");
+            }
         }
 
         private void txtBuscarDocente_TextChanged(object sender, EventArgs e)

@@ -149,17 +149,27 @@ namespace academica {
         }
         private void seleccionarAllumno()
         {
-            try
-            {
-                posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosAlumnos.CurrentRow.Cells["idAlumno"].Value.ToString()));
-                mostrarDatosAlumno();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Registro no encontrado");
-                
-            }
-           
+  
+                try
+                {
+                    var currentRow = grdDatosAlumnos.CurrentRow;
+                    if (currentRow != null)
+                    {
+                        posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(currentRow.Cells["idAlumno"].Value.ToString()));
+                        mostrarDatosAlumno();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro no encontrado");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrió un error");
+                }
+            
+
+
         }
         private void grdDatosAlumnos_CellClick(object sender, DataGridViewCellEventArgs e) {
             seleccionarAllumno();

@@ -73,10 +73,11 @@ namespace academica
             // txtBuscarMaterias
             // 
             this.txtBuscarMaterias.Location = new System.Drawing.Point(676, 30);
-            this.txtBuscarMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarMaterias.Name = "txtBuscarMaterias";
             this.txtBuscarMaterias.Size = new System.Drawing.Size(461, 22);
             this.txtBuscarMaterias.TabIndex = 16;
+            this.txtBuscarMaterias.TextChanged += new System.EventHandler(this.txtBuscarMaterias_TextChanged);
             this.txtBuscarMaterias.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarMaterias_KeyUp);
             // 
             // grdDatosMaterias
@@ -90,7 +91,7 @@ namespace academica
             this.nombre,
             this.uv});
             this.grdDatosMaterias.Location = new System.Drawing.Point(560, 62);
-            this.grdDatosMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grdDatosMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.grdDatosMaterias.Name = "grdDatosMaterias";
             this.grdDatosMaterias.ReadOnly = true;
             this.grdDatosMaterias.RowHeadersWidth = 51;
@@ -141,9 +142,9 @@ namespace academica
             this.grbEdicionMaterias.Controls.Add(this.btnModificarMaterias);
             this.grbEdicionMaterias.Controls.Add(this.btnNuevoMaterias);
             this.grbEdicionMaterias.Location = new System.Drawing.Point(308, 379);
-            this.grbEdicionMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbEdicionMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.grbEdicionMaterias.Name = "grbEdicionMaterias";
-            this.grbEdicionMaterias.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbEdicionMaterias.Padding = new System.Windows.Forms.Padding(4);
             this.grbEdicionMaterias.Size = new System.Drawing.Size(392, 71);
             this.grbEdicionMaterias.TabIndex = 13;
             this.grbEdicionMaterias.TabStop = false;
@@ -153,7 +154,7 @@ namespace academica
             // 
             this.btnEliminarMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarMaterias.Location = new System.Drawing.Point(252, 23);
-            this.btnEliminarMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarMaterias.Name = "btnEliminarMaterias";
             this.btnEliminarMaterias.Size = new System.Drawing.Size(129, 47);
             this.btnEliminarMaterias.TabIndex = 6;
@@ -165,7 +166,7 @@ namespace academica
             // 
             this.btnModificarMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarMaterias.Location = new System.Drawing.Point(116, 23);
-            this.btnModificarMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificarMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificarMaterias.Name = "btnModificarMaterias";
             this.btnModificarMaterias.Size = new System.Drawing.Size(139, 47);
             this.btnModificarMaterias.TabIndex = 5;
@@ -177,7 +178,7 @@ namespace academica
             // 
             this.btnNuevoMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoMaterias.Location = new System.Drawing.Point(8, 23);
-            this.btnNuevoMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevoMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevoMaterias.Name = "btnNuevoMaterias";
             this.btnNuevoMaterias.Size = new System.Drawing.Size(111, 47);
             this.btnNuevoMaterias.TabIndex = 4;
@@ -193,9 +194,9 @@ namespace academica
             this.grbNavegacionMaterias.Controls.Add(this.btnAnteriorMaterias);
             this.grbNavegacionMaterias.Controls.Add(this.btnPrimeroMaterias);
             this.grbNavegacionMaterias.Location = new System.Drawing.Point(16, 379);
-            this.grbNavegacionMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbNavegacionMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.grbNavegacionMaterias.Name = "grbNavegacionMaterias";
-            this.grbNavegacionMaterias.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbNavegacionMaterias.Padding = new System.Windows.Forms.Padding(4);
             this.grbNavegacionMaterias.Size = new System.Drawing.Size(284, 71);
             this.grbNavegacionMaterias.TabIndex = 12;
             this.grbNavegacionMaterias.TabStop = false;
@@ -216,7 +217,7 @@ namespace academica
             // 
             this.btnUltimoMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUltimoMaterias.Location = new System.Drawing.Point(229, 17);
-            this.btnUltimoMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUltimoMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.btnUltimoMaterias.Name = "btnUltimoMaterias";
             this.btnUltimoMaterias.Size = new System.Drawing.Size(47, 47);
             this.btnUltimoMaterias.TabIndex = 3;
@@ -228,7 +229,7 @@ namespace academica
             // 
             this.btnSiguienteMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguienteMaterias.Location = new System.Drawing.Point(185, 17);
-            this.btnSiguienteMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSiguienteMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.btnSiguienteMaterias.Name = "btnSiguienteMaterias";
             this.btnSiguienteMaterias.Size = new System.Drawing.Size(47, 47);
             this.btnSiguienteMaterias.TabIndex = 2;
@@ -240,7 +241,7 @@ namespace academica
             // 
             this.btnAnteriorMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnteriorMaterias.Location = new System.Drawing.Point(53, 22);
-            this.btnAnteriorMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnteriorMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnteriorMaterias.Name = "btnAnteriorMaterias";
             this.btnAnteriorMaterias.Size = new System.Drawing.Size(47, 47);
             this.btnAnteriorMaterias.TabIndex = 1;
@@ -252,7 +253,7 @@ namespace academica
             // 
             this.btnPrimeroMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrimeroMaterias.Location = new System.Drawing.Point(9, 22);
-            this.btnPrimeroMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrimeroMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrimeroMaterias.Name = "btnPrimeroMaterias";
             this.btnPrimeroMaterias.Size = new System.Drawing.Size(47, 47);
             this.btnPrimeroMaterias.TabIndex = 0;
@@ -270,9 +271,9 @@ namespace academica
             this.grbDatosMaterias.Controls.Add(this.txtCodigoMaterias);
             this.grbDatosMaterias.Enabled = false;
             this.grbDatosMaterias.Location = new System.Drawing.Point(15, 11);
-            this.grbDatosMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbDatosMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.grbDatosMaterias.Name = "grbDatosMaterias";
-            this.grbDatosMaterias.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbDatosMaterias.Padding = new System.Windows.Forms.Padding(4);
             this.grbDatosMaterias.Size = new System.Drawing.Size(520, 361);
             this.grbDatosMaterias.TabIndex = 11;
             this.grbDatosMaterias.TabStop = false;
@@ -292,7 +293,7 @@ namespace academica
             // txtUvMaterias
             // 
             this.txtUvMaterias.Location = new System.Drawing.Point(175, 148);
-            this.txtUvMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUvMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.txtUvMaterias.Name = "txtUvMaterias";
             this.txtUvMaterias.Size = new System.Drawing.Size(83, 22);
             this.txtUvMaterias.TabIndex = 4;
@@ -311,7 +312,7 @@ namespace academica
             // txtNombreMaterias
             // 
             this.txtNombreMaterias.Location = new System.Drawing.Point(175, 98);
-            this.txtNombreMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreMaterias.Name = "txtNombreMaterias";
             this.txtNombreMaterias.Size = new System.Drawing.Size(333, 22);
             this.txtNombreMaterias.TabIndex = 2;
@@ -330,7 +331,7 @@ namespace academica
             // txtCodigoMaterias
             // 
             this.txtCodigoMaterias.Location = new System.Drawing.Point(175, 50);
-            this.txtCodigoMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigoMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigoMaterias.Name = "txtCodigoMaterias";
             this.txtCodigoMaterias.Size = new System.Drawing.Size(132, 22);
             this.txtCodigoMaterias.TabIndex = 0;
@@ -346,7 +347,7 @@ namespace academica
             this.Controls.Add(this.grbEdicionMaterias);
             this.Controls.Add(this.grbNavegacionMaterias);
             this.Controls.Add(this.grbDatosMaterias);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "materias";
             this.Text = "materias";
             this.Load += new System.EventHandler(this.materias_Load);
