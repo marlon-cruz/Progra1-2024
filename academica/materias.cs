@@ -158,8 +158,8 @@ namespace academica
         {
             try
             {
-                var currentRow = grdDatosMaterias.CurrentRow;
-                if (currentRow != null)
+                var idActual= grdDatosMaterias.CurrentRow;
+                if (idActual != null)
                 {
                     posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosMaterias.CurrentRow.Cells["idMateria"].Value.ToString()));
                     mostrarDatosMaterias();

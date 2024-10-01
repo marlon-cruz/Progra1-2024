@@ -183,10 +183,10 @@ namespace academica
         {
             try
             {
-                var currentRow = grdDatosDocentes.CurrentRow;
-                if (currentRow != null)
+                var idActual = grdDatosDocentes.CurrentRow;
+                if (idActual != null)
                 {
-                    posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(currentRow.Cells["IdDocente"].Value.ToString()));
+                    posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosDocentes.CurrentRow.Cells["IdDocente"].Value.ToString()));
                     mostrarDatosDocente();
                 }
                 else
