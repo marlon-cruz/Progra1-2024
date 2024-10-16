@@ -72,6 +72,7 @@ namespace academica {
         private void estadoControles(Boolean estado) {
             grbDatosAlumno.Enabled = estado;
             grbNavegacionAlumno.Enabled = !estado;
+           // grdDatosAlumnos.Enabled = !estado; Error encontrado
             btnEliminarAlumno.Enabled = !estado;
         }
 
@@ -130,7 +131,7 @@ namespace academica {
                 if (respuesta != "1") {
                     MessageBox.Show(respuesta, "Error en el registro de alumnos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 } else {
-                    posicion = 0;
+                  //  posicion = 0;
                     actualizarDs();
                     mostrarDatosAlumno();
                 }

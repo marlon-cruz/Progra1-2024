@@ -325,7 +325,7 @@ namespace academica
             "Ingeniero",
             "Arquitecto",
             "bilingüe"});
-            this.cmbEspecialidadDocente.Location = new System.Drawing.Point(147, 251);
+            this.cmbEspecialidadDocente.Location = new System.Drawing.Point(161, 251);
             this.cmbEspecialidadDocente.Name = "cmbEspecialidadDocente";
             this.cmbEspecialidadDocente.Size = new System.Drawing.Size(201, 24);
             this.cmbEspecialidadDocente.TabIndex = 11;
@@ -354,10 +354,10 @@ namespace academica
             // 
             // txtNAcademico
             // 
-            this.txtNAcademico.Location = new System.Drawing.Point(152, 205);
+            this.txtNAcademico.Location = new System.Drawing.Point(163, 205);
             this.txtNAcademico.Margin = new System.Windows.Forms.Padding(4);
             this.txtNAcademico.Name = "txtNAcademico";
-            this.txtNAcademico.Size = new System.Drawing.Size(196, 22);
+            this.txtNAcademico.Size = new System.Drawing.Size(322, 22);
             this.txtNAcademico.TabIndex = 8;
             // 
             // lblMateria2

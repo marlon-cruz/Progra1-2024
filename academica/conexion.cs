@@ -33,8 +33,16 @@ namespace academica {
 
             misComandos.CommandText = "SELECT * FROM docentes";
             miAdaptador.Fill(ds, "docentes");
+
+            misComandos.CommandText = "SELECT * FROM usuarios";
+            miAdaptador.Fill(ds, "usuarios");
             return ds;
         }
+        public void mantenimiento_usuarios()
+        {
+            
+        }
+
         public String administrarAlumnos(String[] datos) {
             String sql = "";
             if (datos[0] == "nuevo") {
@@ -83,6 +91,26 @@ namespace academica {
             return ejecutarSQL(sql);
         }
 
+        public String administrarUsuarios(String[] datos)
+        {
+            String sql = "";
+            if (datos[0] == "nuevo")
+            {
+                sql = "INSERT INTO usuarios(usuario, clave, nombre, direccion, telefono) VALUES('" +
+                    datos[2] + "','" + datos[3] + "','" + datos[4] + "','" + datos[5] + "','" + datos[6] + "')";
+            }
+            else if (datos[0] == "modificar")
+            {
+                sql = "UPDATE usuarios SET usuario='" + datos[2] + "', clave='" + datos[3] + "', nombre='" + datos[4] + "', direccion='" +
+                    datos[5] + "', telefono='" + datos[6] + "' WHERE idUsuario=" + datos[1];
+            }
+            else if (datos[0] == "eliminar")
+            {
+                sql = "DELETE FROM usuarios WHERE idUsuarios=" + datos[1];
+            }
+            return ejecutarSQL(sql);
+        }
+        
         private String ejecutarSQL(String sql) {
             try {
                 misComandos.Connection = miConexion;

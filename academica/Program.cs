@@ -13,7 +13,9 @@ namespace academica {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new principal());
+            Application.Run(new login());
+            //Marlon Steven Cruz Orellana USTR025024
+            //Kevin Alexis Castillo Castillo USTR007724
         }
     }
 }
