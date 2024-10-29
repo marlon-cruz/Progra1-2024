@@ -7,20 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace academica
 {
     public partial class frm_usuario : Form
     {
-
         Conexion objConexion = new Conexion();
         DataSet ds = new DataSet();
         DataTable miTabla = new DataTable();
+
         public int posicion = 0;
-        string accion = "Nuevo";
+        String accion = "nuevo";
         public frm_usuario()
         {
             InitializeComponent();
+        }
+
+        private void frm_usuario_Load(object sender, EventArgs e)
+        {
+            actualizarDs();
         }
         private void actualizarDs()
         {
@@ -28,26 +34,80 @@ namespace academica
             ds = objConexion.obtenerDatos();
             miTabla = ds.Tables["usuarios"];
             miTabla.PrimaryKey = new DataColumn[] { miTabla.Columns["idUsuario"] };
-            grdTablaUsuarios.DataSource = miTabla;
+            grdDatosUsuario.DataSource = miTabla;
             mostrarDatosUsuario();
         }
-        public void mostrarDatosUsuario()
+        private void mostrarDatosUsuario()
         {
             if (miTabla.Rows.Count > 0)
             {
                 txtUsuario.Text = miTabla.Rows[posicion].ItemArray[1].ToString();
                 txtClaveUsuario.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
+                txtConfirmacionUsuario.Text = miTabla.Rows[posicion].ItemArray[2].ToString();
                 txtNombreUsuario.Text = miTabla.Rows[posicion].ItemArray[3].ToString();
                 txtDireccionUsuario.Text = miTabla.Rows[posicion].ItemArray[4].ToString();
                 txtTelefonoUsuario.Text = miTabla.Rows[posicion].ItemArray[5].ToString();
 
-                lblNavegacionUsuarios.Text = (posicion + 1) + " de " + miTabla.Rows.Count;
+                lblRegistrosUsuario.Text = (posicion + 1) + " de " + miTabla.Rows.Count;
             }
         }
 
-        private void frm_usuario_Load(object sender, EventArgs e)
+       
+        private void estadoControles(Boolean estado)
         {
-            actualizarDs();
+            grbDatosUsuario.Enabled = estado;
+            grbNavegacionUsuario.Enabled = !estado;
+            btnEliminarUsuario.Enabled = !estado;
+        }
+
+       
+        void limpiarCajas()
+        {
+            txtUsuario.Text = "";
+            txtClaveUsuario.Text = "";
+            txtConfirmacionUsuario.Text = "";
+            txtNombreUsuario.Text = "";
+            txtDireccionUsuario.Text = "";
+            txtTelefonoUsuario.Text = "";
+        }
+
+      
+   
+        private void filtrarDatos(String filtro)
+        {
+            DataView dv = miTabla.DefaultView;
+            dv.RowFilter = "usuario like '%" + filtro + "%' OR nombre like '%" + filtro + "%'";
+            grdDatosUsuario.DataSource = dv;
+        }
+        private void seleccionarUsuario()
+        {
+            posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdDatosUsuario.CurrentRow.Cells["idUsuario"].Value.ToString()));
+            mostrarDatosUsuario();
+        }
+
+        private void txtBuscarUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrarDatos(txtBuscarUsuario.Text);
+            seleccionarUsuario();
+        }
+
+        private void btnPrimeroUsuario_Click_1(object sender, EventArgs e)
+        {
+            posicion = 0;
+            mostrarDatosUsuario();
+        }
+
+        private void btnAnteriorUsuario_Click(object sender, EventArgs e)
+        {
+            if (posicion > 0)
+            {
+                posicion--;
+                mostrarDatosUsuario();
+            }
+            else
+            {
+                MessageBox.Show("Esta en el primer registro", "Navegacion de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnSiguienteUsuario_Click(object sender, EventArgs e)
@@ -65,12 +125,6 @@ namespace academica
 
         private void btnUltimoUsuario_Click(object sender, EventArgs e)
         {
-            posicion = miTabla.Rows.Count - 1;
-            mostrarDatosUsuario();
-        }
-
-        private void btnAnteriorUsuario_Click(object sender, EventArgs e)
-        {
             if (posicion > 0)
             {
                 posicion--;
@@ -82,30 +136,7 @@ namespace academica
             }
         }
 
-        private void btnPrimeroUsuario_Click(object sender, EventArgs e)
-        {
-            posicion = 0;
-            mostrarDatosUsuario();
-        }
-
-        public void estadoControles(bool estado)
-        {
-            grdTablaUsuarios.Enabled = !estado;
-            grbDatosUsuarios.Enabled = estado;
-            btnEliminarUsuario.Enabled = !estado;
-            grbDatosUsuarios.Enabled = !estado;
-        }
-        public void limpiarCajas()
-        {
-            txtUsuario.Text = "";
-            txtNombreUsuario.Text = "";
-            txtClaveUsuario.Text = "";
-            txtTelefonoUsuario.Text = "";
-            txtDireccionUsuario.Text = "";
-
-        }
-
-        private void btnNuevoUsuario_Click(object sender, EventArgs e)
+        private void btnNuevoUsuario_Click_1(object sender, EventArgs e)
         {
             if (btnNuevoUsuario.Text == "Nuevo")
             {
@@ -117,26 +148,48 @@ namespace academica
             }
             else
             {//Guardar
-                String[] alumnos = {
-                    accion, miTabla.Rows[posicion].ItemArray[0].ToString(),
-                    txtUsuario.Text,txtClaveUsuario.Text,txtNombreUsuario.Text,txtTelefonoUsuario.Text
-            };
-                String respuesta = objConexion.administrarAlumnos(alumnos);
-                if (respuesta != "1")
+                if (txtUsuario.Text.Length > 6 && txtUsuario.Text.Length < 12)
                 {
-                    MessageBox.Show(respuesta, "Error en el registro de alumnos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (Regex.IsMatch(txtClaveUsuario.Text, @"^[a-zA-Z0-9]+$"))
+                    {
+                        if (txtClaveUsuario.Text.Trim() != txtConfirmacionUsuario.Text.Trim())
+                        {
+                            MessageBox.Show("La claves y la confirmacion NO coinciden", "Error en el registro de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            String[] usuario = {
+                        accion, miTabla.Rows[posicion].ItemArray[0].ToString(),
+                        txtUsuario.Text, txtClaveUsuario.Text, txtNombreUsuario.Text, txtDireccionUsuario.Text, txtTelefonoUsuario.Text
+                    };
+                            String respuesta = objConexion.administrarUsuarios(usuario);
+                            if (respuesta != "1")
+                            {
+                                MessageBox.Show(respuesta, "Error en el registro de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
+                                btnNuevoUsuario.Text = "Nuevo";
+                                btnModificarUsuario.Text = "Modificar";
+                                estadoControles(false);
+                                actualizarDs();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La clave debe de contar con numeros y letras", "Error en el registro de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    btnNuevoUsuario.Text = "Nuevo";
-                    btnModificarUsuario.Text = "Modificar";
-                    estadoControles(false);
-                    actualizarDs();
+                    MessageBox.Show("El usuario debe contar con una longitud minima de 6 y maximo de 12", "Error en el registro de usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
         }
 
-        private void btnModificarUsuario_Click(object sender, EventArgs e)
+        private void btnModificarUsuario_Click_1(object sender, EventArgs e)
         {
             if (btnModificarUsuario.Text == "Modificar")
             {
@@ -155,62 +208,37 @@ namespace academica
             }
         }
 
-        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+        private void btnEliminarUsuario_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta seguro de eliminar a " + txtUsuario.Text.Trim() + "?", "Eliminar Usuario", MessageBoxButtons.YesNo,
+            if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreUsuario.Text.Trim() + "?", "Eliminar usuarios", MessageBoxButtons.YesNo,
                MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                String[] alumnos = {
+                String[] usuarios = {
                     "eliminar", miTabla.Rows[posicion].ItemArray[0].ToString()
                 };
-                String respuesta = objConexion.administrarAlumnos(alumnos);
+                String respuesta = objConexion.administrarUsuarios(usuarios);
                 if (respuesta != "1")
                 {
-                    MessageBox.Show(respuesta, "Error en el registro de alumnos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(respuesta, "Error en el registro de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                     posicion = 0;
+                    posicion = 0;
                     actualizarDs();
                     mostrarDatosUsuario();
                 }
             }
         }
-        private void filtrarDatos(String filtro)
-        {
-            DataView dv = miTabla.DefaultView;
-            dv.RowFilter = "usuario like '%" + filtro + "%' OR nombre like '%" + filtro + "%'";
-            grdTablaUsuarios.DataSource = dv;
-        }
 
-        private void txtBuscarUsuarios_KeyUp(object sender, KeyEventArgs e)
+        private void txtBuscarUsuario_KeyUp_1(object sender, KeyEventArgs e)
         {
-            filtrarDatos(txtBuscarUsuarios.Text);
-           
+            filtrarDatos(txtBuscarUsuario.Text);
+            //if (e.KeyValue == 13) {//tecla enter
             seleccionarUsuario();
-            
-        }
-        public void seleccionarUsuario() {
-            try
-            {
-                var idActual = grdTablaUsuarios.CurrentRow;
-                if (idActual != null)
-                {
-                    posicion = miTabla.Rows.IndexOf(miTabla.Rows.Find(grdTablaUsuarios.CurrentRow.Cells["idUsuario"].Value.ToString()));
-                    mostrarDatosUsuario();
-                }
-                else
-                {
-                    MessageBox.Show("Registro no encontrado");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocurrió un error");
-            }
+            //}
         }
 
-        private void grdDatosUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void grdDatosUsuario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             seleccionarUsuario();
         }

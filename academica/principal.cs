@@ -49,5 +49,10 @@ namespace academica
             objForm.MdiParent = this;
             objForm.Show();
         }
+
+        private void principal_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

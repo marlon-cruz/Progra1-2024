@@ -32,7 +32,7 @@ namespace academica
             this.mnxAcademica = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opcAplicacion = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +47,7 @@ namespace academica
             this.mnxAcademica.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnxAcademica.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.aplicacionToolStripMenuItem});
+            this.opcAplicacion});
             this.mnxAcademica.Location = new System.Drawing.Point(0, 0);
             this.mnxAcademica.Name = "mnxAcademica";
             this.mnxAcademica.Size = new System.Drawing.Size(1067, 28);
@@ -66,22 +66,22 @@ namespace academica
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // aplicacionToolStripMenuItem
+            // opcAplicacion
             // 
-            this.aplicacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.opcAplicacion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alumnosToolStripMenuItem,
             this.materiasToolStripMenuItem,
             this.docentesToolStripMenuItem,
             this.toolStripMenuItem1,
             this.notasToolStripMenuItem,
             this.usuariosToolStripMenuItem});
-            this.aplicacionToolStripMenuItem.Name = "aplicacionToolStripMenuItem";
-            this.aplicacionToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
-            this.aplicacionToolStripMenuItem.Text = "Aplicacion";
+            this.opcAplicacion.Name = "opcAplicacion";
+            this.opcAplicacion.Size = new System.Drawing.Size(93, 24);
+            this.opcAplicacion.Text = "Aplicacion";
             // 
             // alumnosToolStripMenuItem
             // 
@@ -140,6 +140,7 @@ namespace academica
             this.Name = "principal";
             this.Text = "APLICACION ACADEMICA";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.principal_Load);
             this.mnxAcademica.ResumeLayout(false);
             this.mnxAcademica.PerformLayout();
             this.ResumeLayout(false);
@@ -152,7 +153,7 @@ namespace academica
         private System.Windows.Forms.MenuStrip mnxAcademica;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aplicacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem opcAplicacion;
         private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem materiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesToolStripMenuItem;

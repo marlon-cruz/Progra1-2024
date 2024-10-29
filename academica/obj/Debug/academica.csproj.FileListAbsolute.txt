@@ -81,3 +81,4 @@ C:\Users\marlo\OneDrive\Escritorio\GITHUBparaTarea\academica\obj\Debug\academica
 C:\Users\marlo\OneDrive\Escritorio\GITHUBparaTarea\academica\obj\Debug\academica.exe
 C:\Users\marlo\OneDrive\Escritorio\GITHUBparaTarea\academica\obj\Debug\academica.pdb
 C:\Users\marlo\OneDrive\Escritorio\GITHUBparaTarea\academica\obj\Debug\academica.frm_usuario.resources
+C:\Users\marlo\OneDrive\Escritorio\GITHUBparaTarea\academica\obj\Debug\academica.login.resources

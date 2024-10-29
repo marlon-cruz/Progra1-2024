@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data; //Esta libreria nos servira para conectarnos a la BD.
-using System.Data.SqlClient; //Libreria necesaria para conectarnos a SQL Server.
+using System.Data.SqlClient;
+using System.Windows.Forms; //Libreria necesaria para conectarnos a SQL Server.
 
 
 namespace academica {
@@ -40,16 +41,16 @@ namespace academica {
         }
         public void mantenimiento_usuarios()
         {
-            
+
         }
 
         public String administrarAlumnos(String[] datos) {
             String sql = "";
             if (datos[0] == "nuevo") {
-                sql = "INSERT INTO alumnos(codigo, nombre, direccion, telefono, dui) VALUES('" + 
+                sql = "INSERT INTO alumnos(codigo, nombre, direccion, telefono, dui) VALUES('" +
                     datos[2] + "','" + datos[3] + "','" + datos[4] + "','" + datos[5] + "','" + datos[6] + "')";
-            }else if (datos[0] == "modificar") {
-                sql = "UPDATE alumnos SET codigo='" + datos[2] + "', nombre='" + datos[3] + "', direccion='" + datos[4] + "', telefono='" + 
+            } else if (datos[0] == "modificar") {
+                sql = "UPDATE alumnos SET codigo='" + datos[2] + "', nombre='" + datos[3] + "', direccion='" + datos[4] + "', telefono='" +
                     datos[5] + "', dui='" + datos[6] + "' WHERE idAlumno=" + datos[1];
             } else if (datos[0] == "eliminar") {
                 sql = "DELETE FROM alumnos WHERE idAlumno=" + datos[1];
@@ -59,13 +60,13 @@ namespace academica {
         public String administrarMaterias(String[] datos)
         {
             String sql = "";
-            if (datos[0] == "nuevo"){
+            if (datos[0] == "nuevo") {
                 sql = "INSERT INTO materias(codigo, nombre, uv) VALUES('" +
                     datos[2] + "','" + datos[3] + "','" + datos[4] + "')";
-            }else if (datos[0] == "modificar"){
+            } else if (datos[0] == "modificar") {
                 sql = "UPDATE materias SET codigo='" + datos[2] + "', nombre='" + datos[3] + "', uv='" + datos[4] +
                     "' WHERE idMateria=" + datos[1];
-            }else if (datos[0] == "eliminar"){
+            } else if (datos[0] == "eliminar") {
                 sql = "DELETE FROM materias WHERE idMateria=" + datos[1];
             }
             return ejecutarSQL(sql);
@@ -96,21 +97,30 @@ namespace academica {
             String sql = "";
             if (datos[0] == "nuevo")
             {
-                sql = "INSERT INTO usuarios(usuario, clave, nombre, direccion, telefono) VALUES('" +
+                sql = "INSERT INTO usuarios (usuario, clave, nombre, direccion, telefono) VALUES('" +
                     datos[2] + "','" + datos[3] + "','" + datos[4] + "','" + datos[5] + "','" + datos[6] + "')";
+
             }
             else if (datos[0] == "modificar")
             {
-                sql = "UPDATE usuarios SET usuario='" + datos[2] + "', clave='" + datos[3] + "', nombre='" + datos[4] + "', direccion='" +
-                    datos[5] + "', telefono='" + datos[6] + "' WHERE idUsuario=" + datos[1];
+                sql = "UPDATE usuarios SET usuario='" + datos[2] + "', clave='" + datos[3] + "', nombre='" + datos[4] + "', direccion='" + datos[5] + "', telefono='" +
+                    datos[6] + "' WHERE idUsuario=" + datos[1];
+
             }
             else if (datos[0] == "eliminar")
             {
-                sql = "DELETE FROM usuarios WHERE idUsuarios=" + datos[1];
+                sql = "DELETE FROM usuarios WHERE idUsuario=" + datos[1];
+            }else if(datos[0] == "iniciar")
+            {
+                sql = "SELECT * FROM usuarios WHERE usuario = '" + datos[1] + "' AND clave = '" + datos[2] + "'";
+
             }
+
             return ejecutarSQL(sql);
         }
-        
+       
+
+
         private String ejecutarSQL(String sql) {
             try {
                 misComandos.Connection = miConexion;
