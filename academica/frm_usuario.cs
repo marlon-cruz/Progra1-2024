@@ -125,15 +125,8 @@ namespace academica
 
         private void btnUltimoUsuario_Click(object sender, EventArgs e)
         {
-            if (posicion > 0)
-            {
-                posicion--;
-                mostrarDatosUsuario();
-            }
-            else
-            {
-                MessageBox.Show("Esta en el primer registro", "Navegacion de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            posicion = miTabla.Rows.Count - 1;
+            mostrarDatosUsuario();
         }
 
         private void btnNuevoUsuario_Click_1(object sender, EventArgs e)

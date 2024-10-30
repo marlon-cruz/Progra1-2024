@@ -41,10 +41,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(196, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(154, 13);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 148);
+            this.pictureBox1.Size = new System.Drawing.Size(257, 208);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -52,6 +52,7 @@
             // btnIniciarSesion
             // 
             this.btnIniciarSesion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnIniciarSesion.Location = new System.Drawing.Point(196, 377);
             this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
@@ -108,6 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(577, 528);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnIniciarSesion);
@@ -115,6 +117,7 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
+            this.ForeColor = System.Drawing.SystemColors.Window;
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";

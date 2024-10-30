@@ -44,22 +44,26 @@ namespace academica
                 }
                 else
                 {
+
                     string[] datos =
                     {
                         "iniciar", txtUsuario.Text,txtContraseña.Text
                     };
 
-                 string respuesta = objConexion.administrarUsuarios(datos);
+                 bool respuesta = objConexion.inicioSesion(datos);
 
-                    if (respuesta != "1")
+                    if (respuesta != true)
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrecta");
+                        txtContraseña.Text = "";
+                        txtUsuario.Text = "";
+                    
+                    }
+                    else
                     {
                         principal objForm = new principal();
                         objForm.Show();
                         this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario o contraseña incorrecta");
                     }
                 }
 

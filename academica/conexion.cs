@@ -110,16 +110,22 @@ namespace academica {
             else if (datos[0] == "eliminar")
             {
                 sql = "DELETE FROM usuarios WHERE idUsuario=" + datos[1];
-            }else if(datos[0] == "iniciar")
-            {
-                sql = "SELECT * FROM usuarios WHERE usuario = '" + datos[1] + "' AND clave = '" + datos[2] + "'";
-
-            }
-
+            } 
             return ejecutarSQL(sql);
         }
        
+        public bool inicioSesion(string[] datos)
+        {
 
+          string  sql = "SELECT * FROM usuarios WHERE usuario = '" + datos[1] + "' AND clave = '" + datos[2] + "'";
+
+            misComandos = new SqlCommand(sql,miConexion);
+            using (SqlDataReader rdr = misComandos.ExecuteReader())
+            {
+                bool lectura = rdr.HasRows;
+                return lectura;
+            }
+        }
 
         private String ejecutarSQL(String sql) {
             try {
