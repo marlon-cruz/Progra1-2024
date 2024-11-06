@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|solutionrelative:sistema_academico\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\models\\docente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|solutionrelative:sistema_academico\\models\\docente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|solutionrelative:sistema_academico\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\alumno.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MyDbContext.cs",
               "DocumentMoniker": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\Models\\MyDbContext.cs",
               "RelativeDocumentMoniker": "sistema_academico\\Models\\MyDbContext.cs",
@@ -51,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Docente.cs",
               "DocumentMoniker": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\Models\\Docente.cs",
               "RelativeDocumentMoniker": "sistema_academico\\Models\\Docente.cs",
