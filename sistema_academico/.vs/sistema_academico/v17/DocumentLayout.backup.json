@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|solutionrelative:sistema_academico\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\models\\docente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|solutionrelative:sistema_academico\\models\\docente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\alumno.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|solutionrelative:sistema_academico\\wwwroot\\views\\alumno.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_alumno.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|solutionrelative:sistema_academico\\wwwroot\\views\\busqueda_alumno.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|c:\\users\\marlo\\onedrive\\escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7B4FE16F-4D58-4CFC-8474-17424349A910}|sistema_academico\\sistema_academico.csproj|solutionrelative:sistema_academico\\wwwroot\\views\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\Models\\MyDbContext.cs",
+              "RelativeDocumentMoniker": "sistema_academico\\Models\\MyDbContext.cs",
+              "ToolTip": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\Models\\MyDbContext.cs",
+              "RelativeToolTip": "sistema_academico\\Models\\MyDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T15:46:08.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Docente.cs",
+              "DocumentMoniker": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\Models\\Docente.cs",
+              "RelativeDocumentMoniker": "sistema_academico\\Models\\Docente.cs",
+              "ToolTip": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\Models\\Docente.cs",
+              "RelativeToolTip": "sistema_academico\\Models\\Docente.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T15:37:02.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Alumno.html",
+              "DocumentMoniker": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\Alumno.html",
+              "RelativeDocumentMoniker": "sistema_academico\\wwwroot\\views\\Alumno.html",
+              "ToolTip": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\Alumno.html",
+              "RelativeToolTip": "sistema_academico\\wwwroot\\views\\Alumno.html",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAACoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-05T21:42:23.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\index.html",
+              "RelativeDocumentMoniker": "sistema_academico\\wwwroot\\views\\index.html",
+              "ToolTip": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\index.html",
+              "RelativeToolTip": "sistema_academico\\wwwroot\\views\\index.html",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-06T15:04:13.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "busqueda_alumno.html",
+              "DocumentMoniker": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_alumno.html",
+              "RelativeDocumentMoniker": "sistema_academico\\wwwroot\\views\\busqueda_alumno.html",
+              "ToolTip": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_alumno.html",
+              "RelativeToolTip": "sistema_academico\\wwwroot\\views\\busqueda_alumno.html",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAD4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-06T15:03:33.573Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -252,3 +252,9 @@ C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_acade
 C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\obj\Debug\net8.0\sistema_academico.genruntimeconfig.cache
 C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\obj\Debug\net8.0\ref\sistema_academico.dll
 C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\bin\Debug\net8.0\sistema_academico.staticwebassets.runtime.json
+C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\marlo\OneDrive\Escritorio\repo-program1\sistema_academico\sistema_academico\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
