@@ -1,5 +1,5 @@
-﻿<form id="frmDocente" data-iddocente="0" data-accion="nuevo">
-    <div class="card text-bg-dark mb-3" style="min-width:700px;">
+﻿﻿<form id="frmDocente" data-iddocente="0" data-accion="nuevo">
+    <div class="card text-bg-dark mb-3" style="width:700px;">
         <div class="card-header">
             <div class="d-flex">
                 Registro de Docentes
@@ -30,45 +30,44 @@
             <div class="row p-1">
                 <div class="col-3 col-md-2">TELEFONO:</div>
                 <div class="col-9 col-md-4">
-                    <input type="text" class="form-control" id="txtTelefonoDocente" name="txtTelefonoDocente"  accept="image/*" onchange="seleccionarImg(this)">
+                    <input type="text" class="form-control" id="txtTelefonoDocente" name="txtTelefonoDocente" required>
                 </div>
             </div>
             <div class="row p-1">
                 <div class="col-3 col-md-2">FOTO:</div>
                 <div class="col-9 col-md-4">
                     <div class="input-group mb-3">
-                        <label class="input-group-text" for="imgFototoDocente">Upload</label>
-                        <input type="file" class="form-control" id="imgFototoDocente">
+                        <label class="input-group-text" for="imgFotodocente">Upload</label>
+                        <input type="file" class="form-control" id="imgFotodocente"
+                               accept="image/*" onchange="selecionarImg(this)">
                     </div>
                 </div>
-                <div class="col-9 col-md-4">
-                    <img class="img-thumbnail rounded" id="ingPrevisualizacionFotoDocente" />    
-                </div>
-                </div>
-
-                <div class="row p-1">
-                    <div class="col-12">
-                        <input type="submit" class="btn btn-primary" value="Guardar">
-                        <input type="reset" class="btn btn-warning" value="Nuevo">
-                        <button type="button" class="btn btn-success" onclick="abrirVentanas('busqueda_docente')">Buscar</button>
-                    </div>
+                <div class="col-3 col-md-4">
+                    <img class="img-thumbnail rounded" id="imgPreVisualizacionFotoDocente" />
                 </div>
             </div>
+            <div class="row p-1">
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary" value="Guardar">
+                    <input type="reset" class="btn btn-warning" value="Nuevo">
+                    <button type="button" class="btn btn-success" onclick="abrirVentanas('busqueda_docente')">Buscar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </form>
 
 <script>
     var miArchivo;
-    function seleccionarImg(file) {
-        let archivo = file.file[0];
+    function selecionarImg(file) {
+        let archivo = file.files[0];
         const reader = new FileReader();
         reader.onload = event => {
             miArchivo = event.target.result;
-            ${ "#ingPrevisualizacionFotoDocente", Attr("src", miArchivo) }
+            $("#imgPreVisualizacionFotoDocente").attr("src", miArchivo);
         };
         reader.readAsDataURL(archivo);
     }
-
     frmDocente.addEventListener('submit', e => {
         e.preventDefault();
         guardarDocentes();
@@ -83,6 +82,7 @@
             nombre: txtNombreDocente.value,
             direccion: txtDireccionDocente.value,
             telefono: txtTelefonoDocente.value,
+            foto: miArchivo.split(",")[1]
         },
             method = "POST",
             url = "https://localhost:7041/api/Docentes";
@@ -115,6 +115,8 @@
         txtNombreDocente.value = docente.nombre;
         txtDireccionDocente.value = docente.direccion;
         txtTelefonoDocente.value = docente.telefono;
+        miArchivo = `data:image/png;base64,${docente.foto}`
+        $("#imgPreVisualizacionFotoDocente").attr("src", miArchivo);
     }
     function limpiarDatosDocentes() {
         frmDocente.dataset.iddocente = 0;
@@ -123,5 +125,7 @@
         txtNombreDocente.value = "";
         txtDireccionDocente.value = "";
         txtTelefonoDocente.value = "";
+        $("#imgPreVisualizacionFotoDocente").attr("src", "");
+        miArchivo = null;
     }
 </script>

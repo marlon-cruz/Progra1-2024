@@ -12,7 +12,7 @@ namespace sistema_academico.Models
 
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
         public DbSet<Alumno> Alumnos { get; set; }
-        public DbSet<Docente> Docente { get; set; }
+        public DbSet<Docente> Docentes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
