@@ -12,6 +12,10 @@
             <table class="table table-dark table-hover" id="tblListadoAlumnos">
                 <thead>
                     <tr>
+                        <th>BUSCAR</th>
+                        <th colspan="5"><input class="form-control" type="search" name="txtBuscarAlumno" id="txtBuscarAlumno" /></th>
+                    </tr>
+                    <tr>
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
                         <th>DIRECCION</th>
@@ -27,8 +31,11 @@
 <script>
     listarAlumnos();
 
-    async function listarAlumnos() {
-        const respuesta = await fetch("/api/Alumnos", {
+    txtBuscarAlumno.addEventListener('keyup', e => {
+        listarAlumnos(txtBuscarAlumno.value);
+    });
+    async function listarAlumnos(buscar = '') {
+        const respuesta = await fetch(`/api/Alumnos/buscar?buscar=${buscar}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -69,4 +76,4 @@
             alertify.warning("Eliminacion cancelada.");
         });
     }
-</script> <!--MZR V2 Y SE-->
+</script>

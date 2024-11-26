@@ -9,8 +9,12 @@
       "PackagePath": "staticwebassets\\views\\Alumno.html"
     },
     {
-      "Id": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\Docentes.html",
-      "PackagePath": "staticwebassets\\views\\Docentes.html"
+      "Id": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\Docente.html",
+      "PackagePath": "staticwebassets\\views\\Docente.html"
+    },
+    {
+      "Id": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\Matricula.html",
+      "PackagePath": "staticwebassets\\views\\Matricula.html"
     },
     {
       "Id": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_alumno.html",
@@ -19,6 +23,10 @@
     {
       "Id": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_docente.html",
       "PackagePath": "staticwebassets\\views\\busqueda_docente.html"
+    },
+    {
+      "Id": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_matricula.html",
+      "PackagePath": "staticwebassets\\views\\busqueda_matricula.html"
     },
     {
       "Id": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\index.html",

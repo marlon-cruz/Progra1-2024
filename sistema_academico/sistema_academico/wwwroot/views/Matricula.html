@@ -1,4 +1,4 @@
-﻿﻿<form id="frmMatricula" data-idmatricula="0" data-accion="nuevo">
+﻿<form id="frmMatricula" data-idmatricula="0" data-accion="nuevo">
     <div class="card text-bg-dark mb-3" style="min-width:700px;">
         <div class="card-header">
             <div class="d-flex">
@@ -58,62 +58,60 @@
         });
         document.querySelector("#dlsAlumnos").innerHTML = filas;
     }
-        frmMatricula.addEventListener('submit', e => {
-            e.preventDefault();
-            guardarMatriculas();
-        });
-        frmMatricula.addEventListener('reset', e => {
-            e.preventDefault();
-            limpiarDatosMatriculas();
-        });
+    frmMatricula.addEventListener('submit', e => {
+        e.preventDefault();
+        guardarMatriculas();
+    });
+    frmMatricula.addEventListener('reset', e => {
+        e.preventDefault();
+        limpiarDatosMatriculas();
+    });
     function obtenerIdAlumnoSeleccionado() {
-        const alumnoSeleccionado = Array.from(dlsAlumnos.options).find(opcion => opcion.value === txtAlumnoMatricula.value);
+        const alumnoSeleccionado = Array.from(dlsAlumnos.options).find(opcion => opcion.value.trim() === txtAlumnoMatricula.value.trim());
         return alumnoSeleccionado?.dataset.idalumno || 0;
     }
-        async function guardarMatriculas() {
-            let datos = {
-                idAlumno: obtenerIdAlumnoSeleccionado(),
-                fecha: txtFechaMatricula.value,
-                periodo: cboPeriodoMatricula.value
+    async function guardarMatriculas() {
+        let datos = {
+            idAlumno: obtenerIdAlumnoSeleccionado(),
+            fecha: txtFechaMatricula.value,
+            periodo: cboPeriodoMatricula.value
+        },
+            method = "POST",
+            url = "https://localhost:7041/api/Matriculas";
+        if (frmMatricula.dataset.accion == "modificar") {
+            url = `https://localhost:7041/api/Matriculas/${frmMatricula.dataset.idmatricula}`;
+            datos.idMatricula = frmMatricula.dataset.idmatricula;
+            method = "PUT";
+        }
+        const respuesta = await fetch(url, {
+            method,
+            headers: {
+                "Content-Type": "application/json"
             },
-                method = "POST",
-                url = "https://localhost:7041/api/Matriculas";
-            if (frmMatricula.dataset.accion == "modificar") {
-                url = `https://localhost:7041/api/Matriculas/${frmMatricula.dataset.idmatricula}`;
-                datos.idMatricula = frmMatricula.dataset.idmatricula;
-                method = "PUT";
-            }
-            const respuesta = await fetch(url, {
-                method,
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(datos)
-            }), matricula = await respuesta.json();
-            if (matricula && matricula?.idMatricula > 0) {
-                alertify.success("Matricula guardado con exito.");
-                listarMatriculas();
-                limpiarDatosMatriculas();
-            } else {
-                alertify.error(`Erro al intentar guardar el matricula: ${matricula}`);
-                conosle.log( matricula );
-            }
+            body: JSON.stringify(datos)
+        }), matricula = await respuesta.json();
+        if (matricula && matricula?.idMatricula > 0) {
+            alertify.success("Matricula guardado con exito.");
+            listarMatriculas();
+            limpiarDatosMatriculas();
+        } else {
+            alertify.error(`Erro al intentar guardar el matricula: ${matricula}`);
+            conosle.log(matricula);
         }
+    }
 
-        function modificarMatricula(matricula) {
-            frmMatricula.dataset.idmatricula = matricula.idMatricula;
-            frmMatricula.dataset.accion = "modificar";
-            txtCodigoMatricula.value = matricula.codigo;
-            txtNombreMatricula.value = matricula.nombre;
-            txtDireccionMatricula.value = matricula.direccion;
-            txtTelefonoMatricula.value = matricula.telefono;
-        }
-        function limpiarDatosMatriculas() {
-            frmMatricula.dataset.idmatricula = 0;
-            frmMatricula.dataset.accion = "nuevo";
-            txtCodigoMatricula.value = "";
-            txtNombreMatricula.value = "";
-            txtDireccionMatricula.value = "";
-            txtTelefonoMatricula.value = "";
-        }
+    function modificarMatricula(matricula) {
+        frmMatricula.dataset.idmatricula = matricula.idMatricula;
+        frmMatricula.dataset.accion = "modificar";
+        txtAlumnoMatricula.value = matricula.alumno.nombre.trim();
+        txtFechaMatricula.value = matricula.fecha.split("T")[0];
+        cboPeriodoMatricula.value = matricula.periodo.trim();
+    }
+    function limpiarDatosMatriculas() {
+        frmMatricula.dataset.idmatricula = 0;
+        frmMatricula.dataset.accion = "nuevo";
+        txtAlumnoMatricula.value = "";
+        txtFechaMatricula.value = "";
+        cboPeriodoMatricula.value = "";
+    }
 </script>

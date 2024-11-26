@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using sistema_academico.Models;
+
 namespace sistema_academico.Controllers
 {
     [Route("api/[controller]")]
@@ -13,32 +14,50 @@ namespace sistema_academico.Controllers
     public class DocentesController : ControllerBase
     {
         private readonly MyDbContext _context;
+
         public DocentesController(MyDbContext context)
         {
             _context = context;
         }
+
         // GET: api/Docentes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Docente>>> GetDocentes()
         {
             return await _context.Docentes.ToListAsync();
         }
+
         // GET: api/Docentes/buscar
         [HttpGet("buscar")]
         public async Task<ActionResult<IEnumerable<Docente>>> BuscarDocentes([FromQuery] DocenteBusquedaParametros parametros)
         {
             var consulta = _context.Docentes.AsQueryable();
-            if (!string.IsNullOrEmpty(parametros.nombre))
+            if (!string.IsNullOrEmpty(parametros.buscar))
             {
-                consulta = consulta.Where(d => d.nombre.Contains(parametros.nombre));
+                consulta = consulta.Where(d => d.nombre.Contains(parametros.buscar));
             }
-            if (!string.IsNullOrEmpty(parametros.codigo) && consulta.Count() <= 0)
+            if (!string.IsNullOrEmpty(parametros.buscar) && consulta.Count() <= 0)
             {
                 consulta = _context.Docentes.AsQueryable();
-                consulta = consulta.Where(d => d.codigo.Contains(parametros.codigo));
+                consulta = consulta.Where(d => d.codigo.Contains(parametros.buscar));
             }
             return await consulta.ToListAsync();
         }
+
+        // GET: api/Docentes/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Docente>> GetDocente(int id)
+        {
+            var docente = await _context.Docentes.FindAsync(id);
+
+            if (docente == null)
+            {
+                return NotFound();
+            }
+
+            return docente;
+        }
+
         // PUT: api/Docentes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -48,7 +67,9 @@ namespace sistema_academico.Controllers
             {
                 return BadRequest();
             }
+
             _context.Entry(docente).State = EntityState.Modified;
+
             try
             {
                 await _context.SaveChangesAsync();
@@ -67,6 +88,7 @@ namespace sistema_academico.Controllers
             return CreatedAtAction("GetDocente", new { id = docente.idDocente }, docente);
             //return NoContent();
         }
+
         // POST: api/Docentes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
@@ -74,8 +96,10 @@ namespace sistema_academico.Controllers
         {
             _context.Docentes.Add(docente);
             await _context.SaveChangesAsync();
+
             return CreatedAtAction("GetDocente", new { id = docente.idDocente }, docente);
         }
+
         // DELETE: api/Docentes/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteDocente(int id)
@@ -85,11 +109,13 @@ namespace sistema_academico.Controllers
             {
                 return NotFound();
             }
+
             _context.Docentes.Remove(docente);
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetDocente", new { id = docente.idDocente }, docente);
             //return NoContent();
         }
+
         private bool DocenteExists(int id)
         {
             return _context.Docentes.Any(e => e.idDocente == id);

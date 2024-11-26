@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3d3opTFIxIGnPITDOzD2iKqr5ia6BzAZhXv/pK++Eig=",
+  "Hash": "0fiiyHpy3iHzbobD/KRqlarEdJSQXCsv9+F+jAR/J4o=",
   "Source": "sistema_academico",
   "BasePath": "_content/sistema_academico",
   "Mode": "Default",
@@ -93,12 +93,12 @@
       "OriginalItemSpec": "wwwroot\\views\\busqueda_docente.html"
     },
     {
-      "Identity": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\Docentes.html",
+      "Identity": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\busqueda_matricula.html",
       "SourceId": "sistema_academico",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\",
       "BasePath": "_content/sistema_academico",
-      "RelativePath": "views/Docentes.html",
+      "RelativePath": "views/busqueda_matricula.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,7 +109,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\views\\Docentes.html"
+      "OriginalItemSpec": "wwwroot\\views\\busqueda_matricula.html"
+    },
+    {
+      "Identity": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\Docente.html",
+      "SourceId": "sistema_academico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\",
+      "BasePath": "_content/sistema_academico",
+      "RelativePath": "views/Docente.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\views\\Docente.html"
     },
     {
       "Identity": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\index.html",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\views\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\views\\Matricula.html",
+      "SourceId": "sistema_academico",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marlo\\OneDrive\\Escritorio\\repo-program1\\sistema_academico\\sistema_academico\\wwwroot\\",
+      "BasePath": "_content/sistema_academico",
+      "RelativePath": "views/Matricula.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\views\\Matricula.html"
     }
   ]
 }

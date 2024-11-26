@@ -1,4 +1,4 @@
-﻿﻿<form id="frmBusquedaDocente">
+﻿<form id="frmBusquedaDocente">
     <div class="card text-bg-dark mb-3">
         <div class="card-header">
             <div class="d-flex">
@@ -37,7 +37,7 @@
     });
 
     async function listarDocentes(buscar = '') {
-        let url = `/api/Docentes/buscar?nombre=${buscar}&codigo=${buscar}`;
+        let url = `/api/Docentes/buscar?buscar=${buscar}`;
         const respuesta = await fetch(url, {
             method: "GET",
             headers: {

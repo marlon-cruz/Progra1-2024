@@ -1,6 +1,6 @@
 ﻿namespace sistema_academico.Models
 {
-    public class DocenteBusquedaParametros
+    public class AlumnoBusquedaParametros
     {
         public string? buscar { get; set; }
     }

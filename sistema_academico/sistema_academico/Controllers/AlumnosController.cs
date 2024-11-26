@@ -20,13 +20,29 @@ namespace sistema_academico.Controllers
             _context = context;
         }
 
+
         // GET: api/Alumnos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Alumno>>> GetAlumnos()
         {
             return await _context.Alumnos.ToListAsync();
         }
-
+        // GET: api/Alumno/buscar
+        [HttpGet("buscar")]
+        public async Task<ActionResult<IEnumerable<Alumno>>> BuscarAlumno([FromQuery] AlumnoBusquedaParametros parametros)
+        {
+            var consulta = _context.Alumnos.AsQueryable();
+            if (!string.IsNullOrEmpty(parametros.buscar))
+            {
+                consulta = consulta.Where(d => d.nombre.Contains(parametros.buscar));
+            }
+            if (!string.IsNullOrEmpty(parametros.buscar) && consulta.Count() <= 0)
+            {
+                consulta = _context.Alumnos.AsQueryable();
+                consulta = consulta.Where(d => d.codigo.Contains(parametros.buscar));
+            }
+            return await consulta.ToListAsync();
+        }
         // GET: api/Alumnos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Alumno>> GetAlumno(int id)
@@ -40,7 +56,6 @@ namespace sistema_academico.Controllers
 
             return alumno;
         }
-
         // PUT: api/Alumnos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -68,8 +83,8 @@ namespace sistema_academico.Controllers
                     throw;
                 }
             }
-
-            return NoContent();
+            return CreatedAtAction("GetAlumno", new { id = alumno.idAlumno }, alumno);
+            //return NoContent();
         }
 
         // POST: api/Alumnos
